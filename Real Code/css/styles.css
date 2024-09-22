@@ -1,0 +1,521 @@
+body, h1, h2, p, ul, li, a, button {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background-color: #e6e6e6;
+    
+}
+
+nav {
+    position: fixed; 
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    color: white;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 30%;
+    
+    
+}
+
+@media (max-width: 400x) {
+    nav ul {
+        gap: 10vw; /* Adjust gap for smaller screens */
+    }
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 8px 16px;
+}
+
+nav ul li a:hover {
+    background-color: #555;
+    color: white;
+    border-radius: 4px;
+}
+
+
+
+
+
+/* Hero Section */
+
+
+
+
+
+
+.hero-image {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/images/hero2.jpg");
+    height: 85%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    margin-bottom: 82px;
+}
+
+.hero-text {
+    position: absolute;
+    text-align: left;
+    top: 50%;
+    left: 15vh;
+    transform: translateY(-50%);
+    color: white;
+    width: 20vw;
+}
+
+.hero-text h1 {
+    font-size: 5rem;
+    margin: 0;
+    line-height: 1.2;
+}
+
+.hero-text p {
+    font-size: 1.2rem;
+}
+
+
+
+/* First section - Image slider and intro text */
+
+
+.intro {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    background-color: #e6e6e6;
+    margin: 20px auto;
+    max-width: 100%;
+    padding: 0 5vw;
+}
+
+
+.intro-content {
+    display: flex;
+    width: 100%;
+    max-width: 1200px;
+
+}
+
+.intro-text {
+    flex: 1;
+    max-width: 600px;
+    text-align: left;
+    padding: 0 20px; 
+    border-radius: 8px; /* Optional: rounded corners */
+    background-color: #e6e6e6;
+    margin-left: 2vw;
+}
+
+
+
+/* Auto Slider */
+
+
+.slider-container {
+    flex: 1;
+    margin-right: 0; 
+    position: relative;
+    
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 8px;
+    width: 100%;
+    margin-right: 5vw;
+    
+   
+    
+}
+
+
+.slides img {
+    width: 100%;
+    height: auto; 
+    display: block;
+    border-radius: 8px;
+    object-fit: cover;
+    
+}
+
+
+.slider {
+    position: relative;
+}
+
+.slides {
+    display: flex;
+    transition: transform 0.7s ease-in-out;
+}
+
+
+
+
+
+@media (max-width: 768px) {
+    .intro-content {
+        flex-direction: column; /* Stack elements vertically */
+        align-items: center; /* Center align the items */
+    }
+
+    .slider-container {
+        order: 1; /* Ensure slider comes first */
+        width: 100%; /* Full width */
+        margin: 0; /* Remove margins */
+    }
+
+    .intro-text {
+        order: 2; /* Ensure intro text comes second */
+        text-align: center; /* Center text */
+        padding: 20px; /* Add padding for spacing */
+        margin: 0; /* Reset margin */
+        max-width: 100%; /* Full width */
+    }
+
+  
+
+    @media (max-width: 768px) {
+        .slider-container .prev, 
+        .slider-container .next {
+            
+            font-size: 3vw; 
+        }
+    }
+        
+
+}
+
+
+
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+    size: 50vw;
+    font-size: 1.5vw; /* Responsive font size */
+
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+
+
+/* Sections  */
+
+section {
+    background-color: #eb6060;
+    text-align: center;
+   
+}
+
+section h2 {
+    margin-bottom: 20px;
+}
+
+section p {
+    margin-bottom: 20px;
+}
+
+
+.gallery-section {
+    margin-top: 80px;
+    background-color:#cccccc;
+    padding: 80px 100px;
+    
+    
+
+}
+
+
+/* Categories Section */
+.categories-section {
+    padding: 80px 20px;
+    background-color: #e6e6e6;
+    
+    
+    text-align: center;
+   
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: adds subtle shadow */
+}
+
+.categories-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px; /* Space between the two sections */
+    flex-wrap: wrap;
+    background-color: #e6e6e6;
+}
+
+.categories-part {
+    flex: 1; /* Ensures both parts take equal width */
+    min-width: 700px; /* Adjust based on your design */
+    background-color: #fff; /* Background color for each part */
+    padding: 20px;
+    border-radius: 8px; /* Optional: rounded corners */
+    background-color: #e6e6e6;
+    margin-left: 70px;
+    margin-top: 50px;
+    width: 40%;
+    max-width: 50%;
+}
+
+.categories-section h1 {
+    font-size: 2rem;
+}
+
+.categories-image {
+    flex: 1;
+    min-width: 200px; /* Adjust based on your design */
+    
+    background-color: #e6e6e6; /* Background color for image part */
+    padding: 20px;
+    border-radius: 8px; /* Optional: rounded corners */
+    margin-top: 60px;
+    
+    max-width: 500px;
+}
+
+.categories-image img {
+    width: 60%;
+    height: auto;
+    border-radius: 8px; /* Optional: rounded corners for image */
+    padding-right: -100px;
+   
+}
+
+
+.categories-part h3 {
+    margin-bottom: 15px;
+    font-size: 1.5rem; /* Adjust as needed */
+}
+
+.categories-part p {
+    font-size: 1rem; /* Adjust as needed */
+    color: #333; /* Change to desired text color */
+}
+
+
+
+.students-section {
+    padding: 40px 20px;
+    background-color: #898989;
+    text-align: center;
+    padding-top: 70px;
+}
+
+.students-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.students-left, .students-right {
+    flex-grow: 1; /* Make both sections grow equally */
+    text-align: left;
+    box-sizing: border-box; /* Ensures padding doesn't increase the width */
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.students-left {
+    width: 40%;
+    flex: 1.5; /* Adjusts the size of the left box */
+    margin-left: 150px;
+}
+
+.students-right {
+    padding-left: 300px;
+    flex: 2; /* Right box takes up more space */
+    /* Customize padding for the right box */
+}
+
+/* Text styling */
+.students-left p, .students-right p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+
+
+
+
+.students-section .students-right p a {
+    color: #1e1e1e;
+}
+
+.students-section .students-right p a:hover {
+    color: #000000;
+    font-weight: bold; /* Makes text bold on hover */
+    
+}
+
+
+
+
+
+button {
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #555;
+}
+
+
+
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 768px) {
+    .students-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .students-left, .students-right {
+        width: 100%;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .students-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .students-left, .students-right {
+        min-width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .students-content {
+        flex-direction: column; /* Stack sections vertically on smaller screens */
+        align-items: center;
+    }
+
+    .students-left, .students-right {
+        min-width: 100%; /* Make each section full-width on small screens */
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 768px) {
+    .intro {
+        flex-direction: column;
+    }
+
+    .intro-text {
+        order: -1;
+        margin-bottom: 20px;
+        text-align: center;
+        max-width: 100%;
+    }
+
+    .slider-container {
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    nav ul {
+        gap: 10vw;
+        padding-left: 0;
+    }
+
+    .footer-left, .footer-center, .footer-right {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+
+
+
+
+@m edia (max-width: 800px) {
+    footer {
+        background-color: blue;
+    }
+}
+
+
